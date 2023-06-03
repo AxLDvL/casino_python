@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-from Business import formatName, enregistrerScore
+from Business import formatName, enregistrerScore, enregistrer_nouveau_joueur
 from Business.Roulette import Roulette
 from Business.User import User
 from Business.MachineASous import MachineASous
@@ -25,9 +25,7 @@ with open("score.txt", "r") as f:
     else:
         #sinon on crée un nouveau joueur avec un wallet de 100€
         player = User(username)
-        with open("score.txt", "a") as f:
-            f.write(f"\n{player}")
-        print(player)
+        enregistrer_nouveau_joueur(player)
 
 #un menu demande au joueur s'il veut jouer à la roulette ou à la machine à sous
 while True:

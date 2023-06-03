@@ -15,4 +15,6 @@ def enregistrerScore(player):
     # Réécrire le fichier avec les nouvelles données
     with open("score.txt", "w") as f:
         f.writelines(lines)
-
+def enregistrer_nouveau_joueur(player):
+    with open("score.txt", "a") as f:
+        f.write(f"\n{player}")

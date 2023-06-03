@@ -35,10 +35,9 @@ class MachineASous(Jeu):
                         print("Perdu! Retentez votre chance\n")
                         continue
                 case "q":
-                    with open("score.txt", "a") as f:
-                        f.write(f"\n{player}")
                     break
                 case _:
                     print("Choix invalide")
+                    continue
 
 
