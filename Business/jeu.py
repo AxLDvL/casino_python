@@ -10,4 +10,4 @@ class Jeu:
 
     #méthodes
     def bienvenue(self):
-        print(f"Bienvenue dans le jeu de la {self._nom}")
+        print(f"\nBienvenue dans le jeu de la {self._nom}\n")

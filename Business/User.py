@@ -3,12 +3,12 @@
 class User:
     # Attributs
     _name = None
-    _wallet = None
+    _solde = None
 
     # Constructeur
-    def __init__(self, name, wallet=100):
-        self._name = name
-        self._wallet = wallet
+    def __init__(self, name, solde=100):
+        self.username = name
+        self.solde = solde
 
     # Getters & setters
     @property
@@ -23,26 +23,27 @@ class User:
         else:
             print("Le nom doit être renseigné")
     @property
-    def wallet(self):
-        return self._wallet
-    @wallet.setter
-    def wallet(self, wallet):
-        if wallet > 0:
-            self._wallet = wallet
+    def solde(self):
+        return self._solde
+    @solde.setter
+    def solde(self, credit):
+        if credit > 0:
+            self._solde = credit
         else:
             print("Le montant doit être positif")
 
     # Méthodes
     def __str__(self):
-        return f"{self._name};{self._wallet}"
+        return f"{self._name};{self._solde}"
 
     def credit(self, amount):
-        self._wallet += amount
+        self._solde += amount
         print(f"Le compte de {self._name} a été crédité de {amount}€")
-    def bet(self, amount):
-        if self._wallet >= amount:
-            self._wallet -= amount
-            print(f"Le compte de {self._name} a été débité de {amount}€")
+    def debit(self, amount):
+        amount = abs(amount)
+        if self._solde >= amount:
+            self._solde -= amount
+            print(f"Le compte de {self._name} a été débité de {amount}€\nSolde restant: {self._solde}€\n")
             return 1
         else:
             print(f"Le compte de {self._name} n'est pas suffisamment approvisionné")
