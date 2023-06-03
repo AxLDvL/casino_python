@@ -1,4 +1,4 @@
-#!#!/usr/bin/env python3
+#!/usr/bin/env python3
 
 class User:
     # Attributs
@@ -17,6 +17,8 @@ class User:
     @username.setter
     def username(self, name):
         if len(name) > 0:
+            #formatage du nom avec la première lettre en majuscule et le reste en minuscule
+            name = name[0].upper() + name[1:].lower()
             self._name = name
         else:
             print("Le nom doit être renseigné")
